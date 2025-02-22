@@ -41,7 +41,9 @@ describe OpenSearch::Aws::Sigv4Client do
       client.indices.delete(index: 'test-index')
 
       # Don't forget `ignore: 404`, because the index has already been deleted, it will raise an error without this option.
-      client.indices.delete(index: 'test-index', ignore: 404)
+      client.indices.delete(index: 'test-index', ignore: [404])
+
+      client.indices.delete(index: 'test-index') # This should be failed
     end.not_to raise_error
   end
 end
