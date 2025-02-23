@@ -3,10 +3,10 @@ name: Integration with Unreleased OpenSearch
 on:
   push:
     branches:
-      - "main"
+      - "*"
   pull_request:
     branches:
-      - "main"
+      - "*"
 
 jobs:
   test:
